@@ -26,6 +26,7 @@ public class Application1 {
         while(index < 6){
            int num = random.nextInt(45) + 1;
            if (!list.contains(num)) {
+               list.add(num);
                lotto[index] = num;
                index++;
            }
