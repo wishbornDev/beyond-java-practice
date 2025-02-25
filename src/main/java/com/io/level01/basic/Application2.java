@@ -49,7 +49,15 @@ public class Application2 {
 
             Files.copy(file.toPath(), copyFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
             System.out.println("파일 복사가 성공적으로 완료 되었습니다.");
-
+        /*
+            try (FileReader reader = new FileReader(sourceFile);
+                 FileWriter writer = new FileWriter(destinationFile)) {
+                 int character;
+                 while ((character = reader.read()) != -1) {
+                    writer.write(character);
+                 }
+            System.out.println("파일 복사가 성공적으로 완료 되었습니다.");
+        */
         } catch (FileNotFoundException e) {
             System.out.println("오류 : " + origin + " (지정된 파일을 찾을 수 없습니다)");
         } catch (IOException e) {

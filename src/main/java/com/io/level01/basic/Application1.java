@@ -36,6 +36,12 @@ public class Application1 {
                 if((int)c == 0) break;
                 System.out.print(c);
             }
+            /* FileReader.read()의 return 값이 -1 이면 더이상 읽어올 내용이 없다.
+            System.out.println("===== 파일 내용 출력 =====");
+            int character;
+            while ((character = fr.read()) != -1) {
+                System.out.print((char) character);
+            }*/
 
         } catch (FileNotFoundException e) {
             System.out.println("오류 : 해당 이름을 가진 파일이 없습니다.");
