@@ -14,7 +14,7 @@ public class Application2 {
 
     private static<T extends Number> Number sum(T[] arr) {
 
-        double sum = 0;
+        double sum = 0.0;
         for(T n : arr) {
             sum += n.doubleValue();
         }

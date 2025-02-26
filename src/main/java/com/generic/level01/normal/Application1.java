@@ -19,6 +19,9 @@ public class Application1 {
     }
 
     private static<T> void swap(T[] arr, int s, int e) {
+
+        if (arr[s] ==  arr[e]) return;
+
         T temp = arr[s];
         arr[s] = arr[e];
         arr[e] = temp;
