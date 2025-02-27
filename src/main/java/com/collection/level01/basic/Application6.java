@@ -20,14 +20,13 @@ public class Application6 {
             if (input.equals("search")) {
                 System.out.print("검색 할 이름 : ");
                 String searchName = br.readLine();
-                boolean isSearch = searchNumber(searchName);
+                searchNumber(searchName);
                 continue;
             }
             if (input.equals("exit")) break;
 
             if(!input.contains(" ")){
                 System.out.println("입력이 잘못 되었습니다. 다음 양식으로 입력해주세요 : <이름> <전화번호>");
-                continue;
             } else {
                 st = new StringTokenizer(input);
                 info.put(st.nextToken(), st.nextToken());
@@ -36,14 +35,13 @@ public class Application6 {
         }
     }
 
-    private static boolean searchNumber(String name) {
+    private static void searchNumber(String name) {
 
          if (!info.containsKey(name)) {
             System.out.println(name + "씨의 번호는 등록 되어 있지 않습니다.");
-            return false;
-        }
-        System.out.println(name + "씨의 전화번호 : " + info.get(name));
-        return true;
+         } else {
+             System.out.println(name + "씨의 전화번호 : " + info.get(name));
+         }
     }
 
 }

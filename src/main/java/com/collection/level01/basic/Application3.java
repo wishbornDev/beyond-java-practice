@@ -19,10 +19,10 @@ public class Application3 {
             if(customer.equals("next")) {
                 if (waiting.isEmpty()) {
                     System.out.println("대기 고객이 없습니다.");
-                    continue;
+                } else {
+                    System.out.println( waiting.peek() + " 고객님 차례입니다.");
+                    waiting.poll();
                 }
-                System.out.println( waiting.peek() + " 고객님 차례입니다.");
-                waiting.poll();
                 continue;
             }
 
