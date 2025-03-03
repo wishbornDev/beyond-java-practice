@@ -31,7 +31,9 @@ public class Application2 {
 
         // 3. 가장 높은 주문 금액을 가진 고객의 이름을 반환
         String highestOrderCustomer = orders.stream()
-                .reduce((a, b) -> a.getTotalAmount() > b.getTotalAmount() ? a : b).get().getCustomerName();
+                        .max(Comparator.comparingDouble(Order::getTotalAmount))
+                        .map(Order::getCustomerName)
+                        .orElse(null);
 
         System.out.println(completedOrderIds); // 출력 예시: ["O001", "O003"]
         System.out.println(totalAmountByCustomer); // 출력 예시: {홍길동=1200.0, 김철수=800.0, 이영희=600.0, 박민수=300.0}

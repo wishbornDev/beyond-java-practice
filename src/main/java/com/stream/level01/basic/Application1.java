@@ -29,11 +29,13 @@ public class Application1 {
         // 2. IT 부서에서 급여가 5,000 이상인 직원의 이름을 급여 순으로 내림차순 정렬하여 반환
         List<String> highSalaryIT = employees
                 .stream()
-                .filter(e -> e.getDepartment().equals("IT"))
-                .filter(e -> e.getSalary() >= 5000)
+                /*.filter(e -> e.getDepartment().equals("IT"))
+                .filter(e -> e.getSalary() >= 5000)*/
+                .filter(e -> e.getDepartment().equals("IT")
+                        && e.getSalary() >= 5000)
                 .sorted(Comparator.comparing(Employee::getSalary).reversed())
                 .map(Employee::getName)
-                .toList();
+                .collect(Collectors.toList());
 
 
         // 3. 각 부서별 평균 급여를 계산하여 맵으로 반환
